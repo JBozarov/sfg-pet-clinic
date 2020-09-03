@@ -9,6 +9,10 @@
   <name>pet-clinic-data</name>
   <description>Data module for pet clinic app </description>
   
+  <properties>
+  	 <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
+  </properties>
+  
   <dependencies>
   		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,15 +46,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
-					</execution>
-				</executions>
+	                <execution>
+	                    <goals>
+	                        <goal>repackage</goal>
+	                    </goals>
+	                </execution>
+            </executions>
 			</plugin>
 		</plugins>
 	</build>
