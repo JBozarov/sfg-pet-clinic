@@ -1,5 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -32,14 +34,44 @@ public class DataLoader implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
+			PetType petType1 = new PetType(); 
+	        petType1.setName("Dog");
+	        PetType savedDogPetType = petTypeService.save(petType1); 
+	        
+	        PetType petType2 = new PetType();
+	        petType2.setName("Cat");
+	        PetType savedCatPetType = petTypeService.save(petType2); 
+	        System.out.println("PetType Loaded... ");
+        
 		 	Owner owner1 = new Owner();
 	        owner1.setFirstName("Michael");
 	        owner1.setLastName("Weston");
+	        owner1.setAddress("123 Bricherel");
+	        owner1.setCity("Miami");
+	        owner1.setTelephone("12121212131");
+	        
+	        Pet makesPet = new Pet(); 
+	        makesPet.setPetType(savedDogPetType);
+	        makesPet.setBirthDate(LocalDate.now());
+	        makesPet.setName("Rosco");
+	        makesPet.setOwner(owner1);
+	        owner1.getPets().add(makesPet); 
 	        ownerService.save(owner1);
+	        
 
 	        Owner owner2 = new Owner();
 	        owner2.setFirstName("Fiona");
 	        owner2.setLastName("Glenanne");
+	        owner2.setAddress("123 Bricherel");
+	        owner2.setCity("Miami");
+	        owner2.setTelephone("12121212131");
+	        
+	        Pet fionasCat = new Pet(); 
+	        fionasCat.setPetType(savedCatPetType);
+	        fionasCat.setBirthDate(LocalDate.now());
+	        fionasCat.setName("Just Cat");
+	        fionasCat.setOwner(owner2);
+	        owner2.getPets().add(fionasCat); 
 	        ownerService.save(owner2);
 	        System.out.println("Loaded Owners....");
 
@@ -54,15 +86,7 @@ public class DataLoader implements CommandLineRunner{
 	        vetService.save(vet2);
 	        System.out.println("Loaded Vets....");
 	        
-	        PetType petType1 = new PetType(); 
-	        petType1.setName("Dog");
-	        PetType savedDogPetType = petTypeService.save(petType1); 
 	        
-	        PetType petType2 = new PetType();
-	        petType2.setName("Cat");
-	        PetType savedCatPetType = petTypeService.save(petType2); 
-	        
-	        System.out.println("PetType Loaded... ");
 	        
 	}
 
