@@ -33,9 +33,6 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
 	public void delete(PetType object) {
 		super.delete(object);
 	}
-
-	
-
 	
 	
 }
