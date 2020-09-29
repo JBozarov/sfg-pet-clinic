@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@MappedSuperclass // Designates a class whose mapping information is applied to the entities that inherit from it. A mapped superclass has no separate table defined for it.
 public class BaseEntity implements Serializable{
 	
 	@Id
@@ -20,7 +20,6 @@ public class BaseEntity implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
-	} 
-	
+	}
 	
 }
