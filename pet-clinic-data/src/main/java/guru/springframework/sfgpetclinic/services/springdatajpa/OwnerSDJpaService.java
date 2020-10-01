@@ -46,7 +46,7 @@ public class OwnerSDJpaService implements OwnerService {
 
 	@Override
 	public Owner save(Owner object) {
-		return null;
+		return ownerRepository.save(object);
 	}
 
 	@Override
