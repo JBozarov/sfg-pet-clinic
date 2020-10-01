@@ -12,12 +12,12 @@ import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService  {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService  {
 
 	private PetTypeService petTypeService; 
 	private PetService petService; 
 	
-	public OwnerServiceMap(PetTypeService petTypesService, PetService petService) {
+	public OwnerMapService(PetTypeService petTypesService, PetService petService) {
 		this.petTypeService = petTypesService;
 		this.petService = petService;
 	}
