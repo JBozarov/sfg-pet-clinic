@@ -45,7 +45,15 @@
 			<scope>test</scope>
 		</dependency>
 		
-		    <!-- webjars -->
+		<!--
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<optional>true</optional>
+		</dependency>
+		-->
+		
+		<!-- webjars -->
 	    <dependency>
 	      <groupId>org.webjars</groupId>
 	      <artifactId>webjars-locator-core</artifactId>
